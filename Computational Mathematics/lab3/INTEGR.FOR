@@ -1,0 +1,15 @@
+	real function FUN(X)
+	FUN=2*x/(2*x+2)
+	end
+
+	program integr
+	real A,B,ABSERR, RELERR, RESULT,ERREST,FLAG
+	external FUN
+	integer NOFUN
+	ABSERR=0.000001
+	RELERR=ABSERR
+	A=1.0
+	B=3.0
+	call QUANC8(FUN,A,B,ABSERR,RELERR,RESULT,ERREST,NOFUN,FLAG)
+	write(6,*)RESULT,ERREST,NOFUN,FLAG
+	end
